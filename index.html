@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Razlan Technologies | WhatsApp Autopilot & AI Assistants</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -26,178 +22,229 @@
         
         header {
             text-align: center;
-            padding: 40px 0;
+            padding: 50px 20px;
             background: #fff;
-            margin-bottom: 30px;
-            border-radius: 12px;
+            margin-bottom: 40px;
+            border-radius: 16px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
         
         .logo {
-            font-size: 14px;
+            font-size: 13px;
             letter-spacing: 2px;
-            color: #666;
-            margin-bottom: 10px;
+            color: #888;
+            margin-bottom: 15px;
+            text-transform: uppercase;
         }
         
         h1 {
-            font-size: 36px;
+            font-size: 32px;
             color: #1a1a1a;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
         
         .tagline {
-            font-size: 20px;
+            font-size: 18px;
             color: #666;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         
         .cta-button {
             display: inline-block;
             background: #25d366;
             color: white;
-            padding: 15px 30px;
+            padding: 16px 32px;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 50px;
             font-weight: 600;
             font-size: 16px;
-            margin-top: 10px;
         }
         
-        .features {
+        /* Section Headers */
+        .section-label {
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: #888;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        
+        .section-title {
+            font-size: 28px;
+            color: #1a1a1a;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        
+        .section-subtitle {
+            font-size: 16px;
+            color: #888;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        /* Cards */
+        .card {
             background: #fff;
             padding: 30px;
-            border-radius: 12px;
-            margin-bottom: 30px;
+            border-radius: 16px;
+            margin-bottom: 20px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
         
-        .features h2 {
-            font-size: 18px;
-            margin-bottom: 20px;
-            color: #1a1a1a;
+        .card-dark {
+            background: #1a1a1a;
+            color: white;
         }
         
-        .features ul {
-            list-style: none;
-        }
+        .card-dark h3 { color: white; }
+        .card-dark .price { color: #22c55e; }
+        .card-dark .setup { color: #888; }
         
-        .features li {
-            padding: 10px 0;
-            padding-left: 30px;
-            position: relative;
-        }
-        
-        .features li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #25d366;
-            font-weight: bold;
-        }
-        
-        .pricing {
+        /* Pricing */
+        .pricing-grid {
             display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
             margin-bottom: 30px;
         }
         
-        .tier {
-            background: #fff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            border: 2px solid transparent;
+        .plan-badge {
+            display: inline-block;
+            background: #f3f4f6;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #666;
+            text-transform: uppercase;
+            margin-bottom: 15px;
         }
         
-        .tier:hover {
-            border-color: #25d366;
-        }
-        
-        .tier h3 {
-            font-size: 20px;
-            margin-bottom: 5px;
-            color: #1a1a1a;
+        .plan-badge-green {
+            background: #22c55e;
+            color: white;
         }
         
         .price {
-            font-size: 32px;
-            color: #25d366;
-            font-weight: bold;
+            font-size: 36px;
+            font-weight: 700;
+            color: #1a1a1a;
             margin: 10px 0;
         }
         
         .setup {
             color: #666;
             font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .plan-for {
+            color: #666;
+            font-size: 14px;
             margin-bottom: 20px;
         }
         
-        .tier ul {
+        .plan-features {
             list-style: none;
             margin: 20px 0;
         }
         
-        .tier li {
-            padding: 8px 0;
+        .plan-features li {
+            padding: 10px 0;
             padding-left: 25px;
             position: relative;
             font-size: 15px;
+            border-bottom: 1px solid #f3f4f6;
         }
         
-        .tier li:before {
+        .plan-features li:last-child { border-bottom: none; }
+        
+        .plan-features li:before {
             content: "•";
             position: absolute;
             left: 0;
-            color: #25d366;
+            color: #22c55e;
+            font-weight: bold;
         }
         
-        .note {
-            background: #f0f9f4;
+        .card-dark .plan-features li {
+            border-bottom-color: #333;
+        }
+        
+        /* Info boxes */
+        .info-box {
+            background: #f8f9fa;
             padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-            border-left: 4px solid #25d366;
+            border-radius: 12px;
+            margin-bottom: 20px;
         }
         
-        .note h4 {
+        .info-box h4 {
             font-size: 14px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             color: #1a1a1a;
         }
         
-        .note p {
+        .info-box p {
             font-size: 14px;
             color: #666;
+            margin-bottom: 8px;
         }
         
-        .addons {
-            background: #fff;
-            padding: 30px;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
+        .info-box p:last-child { margin-bottom: 0; }
         
-        .addons h2 {
-            font-size: 18px;
-            margin-bottom: 15px;
-        }
-        
-        .example {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
+        /* Contact limits grid */
+        .limits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
             margin-top: 15px;
+        }
+        
+        .limit-item {
+            background: white;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 13px;
+        }
+        
+        .limit-item strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+        
+        /* BYOK box */
+        .byok-box {
+            background: #f0f9f4;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #22c55e;
+            margin-top: 20px;
+        }
+        
+        .byok-box h4 {
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+        
+        .byok-box p {
             font-size: 14px;
             color: #666;
         }
         
+        /* Footer */
         footer {
             text-align: center;
-            padding: 40px 20px;
+            padding: 50px 20px;
             color: #666;
-            font-size: 14px;
+        }
+        
+        footer p {
+            margin-bottom: 20px;
+            font-size: 16px;
         }
         
         .whatsapp-btn {
@@ -206,185 +253,176 @@
             gap: 10px;
             background: #25d366;
             color: white;
-            padding: 15px 30px;
+            padding: 16px 32px;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
             font-size: 16px;
-            margin-top: 20px;
+        }
+        
+        /* Divider */
+        .divider {
+            height: 1px;
+            background: #e5e7eb;
+            margin: 50px 0;
         }
         
         @media (max-width: 600px) {
-            h1 {
-                font-size: 28px;
-            }
-            
-            .tagline {
-                font-size: 16px;
-            }
-            
-            .price {
-                font-size: 28px;
-            }
+            h1 { font-size: 26px; }
+            .section-title { font-size: 24px; }
+            .price { font-size: 32px; }
+            .limits-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Header -->
         <header>
-            <div class="logo">RAZLAN TECHNOLOGIES</div>
+            <div class="logo">Razlan Technologies</div>
             <h1>AI Automation for Business & Life</h1>
             <p class="tagline">WhatsApp Autopilot for SMEs • Personal Assistant Bots for Individuals</p>
             <a href="https://wa.me/60192629142" class="cta-button">Get Started on WhatsApp</a>
         </header>
-        
-        <section class="features">
-            <div class="logo" style="text-align: center; margin-bottom: 20px;">FOR BUSINESSES</div>
-            <h2 style="text-align: center; font-size: 28px;">📱 WhatsApp Autopilot</h2>
-            <p style="text-align: center; color: #666; margin-bottom: 10px;">Never miss a customer enquiry</p>
-            <p style="text-align: center; color: #888; margin-bottom: 30px;">24/7 auto-replies + lead capture + human handoff</p>
-            
-            <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 30px;">
-                <h3 style="margin-top: 0; font-size: 16px; color: #1a1a1a;">Every plan includes:</h3>
-                <ul style="list-style: none; padding: 0; margin: 15px 0 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px;">
-                    <li style="padding-left: 28px; position: relative; font-size: 14px;">
-                        <span style="position: absolute; left: 0; color: #22c55e;">✓</span>
-                        Instant replies to FAQs (price, packages, location, hours)
-                    </li>
-                    <li style="padding-left: 28px; position: relative; font-size: 14px;">
-                        <span style="position: absolute; left: 0; color: #22c55e;">✓</span>
-                        Captures lead details (name + need + preferred time)
-                    </li>
-                    <li style="padding-left: 28px; position: relative; font-size: 14px;">
-                        <span style="position: absolute; left: 0; color: #22c55e;">✓</span>
-                        "Talk to human" button + handoff when needed
-                    </li>
-                    <li style="padding-left: 28px; position: relative; font-size: 14px;">
-                        <span style="position: absolute; left: 0; color: #22c55e;">✓</span>
-                        Platform fee included (no separate tool cost)
-                    </li>
-                </ul>
-            </div>
-            
-            <h2 style="font-size: 18px;">What It Does</h2>
-            <ul>
-                <li>Instant answers to common questions</li>
-                <li>Capture new leads + key details</li>
-                <li>Smart routing (Team tier) — send enquiries to the right person</li>
-                <li>Follow-ups (optional)</li>
-                <li>Works 24/7 (even after hours)</li>
-            </ul>
-        </section>
-        
-        <section class="pricing">
-            <div class="tier">
-                <h3>Lite</h3>
-                <div class="price">RM 299/month</div>
-                <div class="setup">Setup: RM 1,200 (one-time)</div>
-                <p><strong>For:</strong> Solo owners / low enquiry volume</p>
-                <ul>
+
+        <!-- WHATSAPP AUTOPILOT -->
+        <div class="section-label">For Businesses</div>
+        <h2 class="section-title">📱 WhatsApp Autopilot</h2>
+        <p class="section-subtitle">24/7 auto-replies • Lead capture • Human handoff</p>
+
+        <!-- Pricing -->
+        <div class="pricing-grid">
+            <!-- LITE -->
+            <div class="card">
+                <span class="plan-badge">Lite</span>
+                <div class="price">RM 299<span style="font-size: 16px; color: #888; font-weight: 400;">/month</span></div>
+                <div class="setup">Setup: <strong>RM 1,200</strong> one-time</div>
+                <p class="plan-for">Best for: Solo owners / low enquiry volume</p>
+                
+                <ul class="plan-features">
                     <li>1 WhatsApp number</li>
-                    <li>Core automation (Menu → FAQs → Capture → Handoff)</li>
-                    <li>Basic tagging + lead notification</li>
-                    <li>1 update/month</li>
+                    <li>Instant FAQ replies (price, packages, hours)</li>
+                    <li>Lead capture (name + need + preferred time)</li>
+                    <li>"Talk to human" handoff</li>
+                    <li>1 update / month</li>
                     <li>Basic monthly summary</li>
                 </ul>
-                <p style="margin-top: 15px; font-size: 13px; color: #666;">Extra updates: RM 30 each</p>
+                <p style="font-size: 13px; color: #888; margin-top: 15px;">Extra updates: RM 30 each</p>
             </div>
-            
-            <div class="tier" style="background: #1a1a1a; color: white;">
-                <h3 style="color: white;">Team</h3>
-                <div class="price" style="color: #22c55e;">RM 599/month</div>
-                <div class="setup" style="color: #ccc;">Setup: RM 2,000 (one-time)</div>
-                <p style="color: #ccc;"><strong>For:</strong> Businesses with staff / higher volume</p>
-                <p style="color: #888;">Everything in Lite, plus:</p>
-                <ul>
+
+            <!-- TEAM -->
+            <div class="card card-dark">
+                <span class="plan-badge plan-badge-green">Team</span>
+                <div class="price">RM 599<span style="font-size: 16px; color: #888; font-weight: 400;">/month</span></div>
+                <div class="setup">Setup: <strong>RM 2,000</strong> one-time</div>
+                <p class="plan-for" style="color: #ccc;">Best for: Businesses with staff / higher volume</p>
+                
+                <ul class="plan-features">
+                    <li><strong>Everything in Lite, plus:</strong></li>
                     <li>Shared team inbox (multi-agent)</li>
                     <li>Assign chats + escalation rules</li>
-                    <li>Smart routing (service / new vs returning / staff)</li>
+                    <li>Smart routing (by service / staff / new vs returning)</li>
                     <li>Follow-up sequences</li>
-                    <li>20 updates/month</li>
-                    <li>Updates processed 1st & 15th</li>
+                    <li>20 updates / month (processed 1st & 15th)</li>
                     <li>Priority support (business hours)</li>
                 </ul>
             </div>
-        </section>
-        
-        <div class="note">
+        </div>
+
+        <!-- Contact Limits -->
+        <div class="card">
+            <h4 style="margin-bottom: 8px;">Contact Limits</h4>
+            <p style="font-size: 14px; color: #666; margin-bottom: 15px;">Contact = 1 unique customer phone saved</p>
+            <div class="limits-grid">
+                <div class="limit-item">
+                    <strong>Up to 450</strong>
+                    <span style="color: #22c55e;">Included</span>
+                </div>
+                <div class="limit-item">
+                    <strong>Up to 2,500</strong>
+                    +RM 50/month
+                </div>
+                <div class="limit-item">
+                    <strong>Up to 5,000</strong>
+                    +RM 150/month
+                </div>
+                <div class="limit-item">
+                    <strong>Up to 10,000</strong>
+                    +RM 250/month
+                </div>
+            </div>
+        </div>
+
+        <!-- What's an Update -->
+        <div class="info-box">
             <h4>What's an "update"?</h4>
             <p><strong>Counts as 1:</strong> Edit 1 FAQ / change hours / swap 1 link / rename 1 button / adjust 1 rule / edit 1 follow-up</p>
-            <p style="margin-top: 10px;"><strong>Quoted separately:</strong> New flows, new language, new integrations (Sheets/CRM/payment/calendar), full FAQ rewrites</p>
+            <p><strong>Quoted separately:</strong> New flows, new language, new integrations (Sheets/CRM/payment/calendar), full FAQ rewrites</p>
         </div>
-        
-        <div class="note" style="background: #fff; border: 1px dashed #ccc;">
-            <h4>Contact Limits</h4>
-            <p style="margin: 0 0 15px 0;">Contact = 1 unique customer phone saved</p>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; font-size: 13px;">
-                <div style="padding: 10px; background: #f8f9fa; border-radius: 6px;"><strong>Up to 450</strong><br><span style="color: #22c55e;">Included</span></div>
-                <div style="padding: 10px; background: #f8f9fa; border-radius: 6px;"><strong>Up to 2,500</strong><br>+RM 50/mo</div>
-                <div style="padding: 10px; background: #f8f9fa; border-radius: 6px;"><strong>Up to 5,000</strong><br>+RM 150/mo</div>
-                <div style="padding: 10px; background: #f8f9fa; border-radius: 6px;"><strong>Up to 10,000</strong><br>+RM 250/mo</div>
-            </div>
+
+        <!-- Broadcast Add-On -->
+        <div class="info-box">
+            <h4>Broadcast Add-On (Optional)</h4>
+            <p>Send promotional messages to your saved contacts</p>
+            <p style="margin-top: 10px;">Campaign setup: <strong>RM 150</strong> + <strong>RM 0.60</strong> per recipient</p>
+            <p style="font-size: 13px; color: #888; margin-top: 8px;">Example: 500 customers = RM150 + RM300 = <strong>RM 450 total</strong></p>
         </div>
-        
-        <section class="features" style="margin-top: 40px;">
-            <div class="logo" style="text-align: center; margin-bottom: 20px;">PERSONAL PRODUCTIVITY</div>
-            <h2 style="text-align: center; font-size: 28px;">🤖 Personal Assistant Bot (BYOK)</h2>
-            <p style="text-align: center; color: #666; margin-bottom: 30px;">Your own private Telegram bot for reminders, follow-ups & weekly planning.<br>Powered by your OpenAI API key — you pay AI usage directly.</p>
-        </section>
-        
-        <section class="pricing">
-            <div class="tier">
-                <h3>Option A: Managed</h3>
+
+        <div class="divider"></div>
+
+        <!-- PERSONAL ASSISTANT BOT -->
+        <div class="section-label">For Individuals</div>
+        <h2 class="section-title">🤖 Personal Assistant Bot</h2>
+        <p class="section-subtitle">Your private Telegram bot for reminders, follow-ups & weekly planning</p>
+
+        <!-- Pricing -->
+        <div class="pricing-grid">
+            <!-- Option A -->
+            <div class="card">
+                <span class="plan-badge">Option A: Managed</span>
                 <div class="price">RM 500</div>
                 <div class="setup">+ RM 60/month platform fee</div>
-                <p><strong>Best for:</strong> Individuals who want it handled</p>
-                <ul>
+                <p class="plan-for">Best for: Individuals who want it handled</p>
+                
+                <ul class="plan-features">
                     <li>Your own Telegram bot + activation</li>
-                    <li>Personal Ops pack (tasks, reminders, follow-ups, weekly review)</li>
-                    <li>Security baseline + monitoring on my server</li>
+                    <li>Personal Ops pack installed</li>
+                    <li>Tasks, reminders, follow-ups, weekly review</li>
+                    <li>Security baseline + monitoring</li>
+                    <li>Hosting, updates & basic async support</li>
                     <li>30-day warranty + 1 Support Day included</li>
-                    <li>Hosting, updates & basic async support ongoing</li>
                 </ul>
-                <p style="margin-top: 15px; font-size: 13px; color: #666;">System changes (new features, integrations, packs): <strong>RM 100/request</strong></p>
+                <p style="font-size: 13px; color: #888; margin-top: 15px;">System changes: <strong>RM 100</strong> per request</p>
             </div>
-            
-            <div class="tier">
-                <h3>Option B: Private Server</h3>
+
+            <!-- Option B -->
+            <div class="card">
+                <span class="plan-badge">Option B: Private Server</span>
                 <div class="price">RM 2,000</div>
                 <div class="setup">One-time deployment</div>
-                <p><strong>Best for:</strong> Full ownership & privacy</p>
-                <ul>
+                <p class="plan-for">Best for: Full ownership & privacy</p>
+                
+                <ul class="plan-features">
                     <li>Setup on your VPS (you pay VPS bill)</li>
                     <li>Security hardening + monitoring basics</li>
                     <li>Your Telegram bot connected</li>
                     <li>Personal Ops pack installed</li>
-                    <li>Handover + runbook (restart/logs/backup)</li>
+                    <li>Handover + runbook included</li>
                     <li>30-day warranty + 1 Support Day included</li>
                 </ul>
-                <p style="margin-top: 15px; font-size: 13px; color: #666;">No ongoing fees • Support quoted if needed • Changes: <strong>RM 100/request</strong></p>
+                <p style="font-size: 13px; color: #888; margin-top: 15px;">No ongoing fees • Support quoted if needed • Changes: <strong>RM 100</strong> per request</p>
             </div>
-        </section>
-        
-        <div class="note">
-            <h4>🔑 BYOK (Bring Your Own Key)</h4>
-            <p>You connect your OpenAI API key once. You pay AI usage directly to OpenAI. If credit runs out, bot pauses until you top up. You can delete/rotate your key anytime.</p>
         </div>
-        
-        <section class="addons">
-            <h2>Broadcast Add-On (Optional)</h2>
-            <p>Send promotional messages to your saved contacts</p>
-            <ul style="list-style: none; margin-top: 15px;">
-                <li style="padding: 5px 0;">• Campaign setup: <strong>RM 150</strong></li>
-                <li style="padding: 5px 0;">• Per recipient: <strong>RM 0.60</strong></li>
-            </ul>
-            <div class="example">
-                <strong>Example:</strong> 500 customers = RM150 + RM300 = <strong>RM 450 total</strong>
-            </div>
-        </section>
-        
+
+        <!-- BYOK -->
+        <div class="byok-box">
+            <h4>🔑 BYOK (Bring Your Own Key)</h4>
+            <p>You connect your own OpenAI API key. You pay AI usage directly to OpenAI. If your credit runs out, the bot pauses until you top up. You can delete or rotate your key anytime.</p>
+        </div>
+
+        <!-- Footer -->
         <footer>
-            <p>Ready to automate your customer enquiries? Contact Razlan directly.</p>
+            <p>Ready to automate your business or get your own AI assistant?</p>
             <a href="https://wa.me/60192629142" class="whatsapp-btn">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
@@ -395,4 +433,3 @@
     </div>
 </body>
 </html>
-< netlify redeploy Tue Feb 17 16:33:54 UTC 2026 -->
